@@ -20,7 +20,8 @@ from gevent.pywsgi import WSGIServer
 # Define a flask app
 app = Flask(__name__)
 
-# You can also use pretrained model from Keras (use only during first time loading the model 
+# You can also use pretrained model from Keras 
+# (use only during first time loading the model 
 # and afterwards comment the same)
 # Check https://keras.io/applications/
 
@@ -49,6 +50,7 @@ def model_predict(img_path, model):
     x = np.expand_dims(x, axis=0)
 
     # Be careful how your trained model deals with the input
+    
     # otherwise, it won't make correct prediction!
     x = preprocess_input(x, mode='caffe')
 
